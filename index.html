@@ -399,18 +399,15 @@
     </footer>
 
     <script>
-        // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 if (this.getAttribute('href') === '#') {
-                    // Функциональность кнопки "Наверх"
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
                     });
                 } else {
-                    // Обычная привязка к якорю
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
@@ -418,7 +415,6 @@
             });
         });
 
-        // Видимость кнопки "Наверх"
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.querySelector('.back-to-top').style.display = "block";
@@ -427,7 +423,6 @@
             }
         };
         
-        // Инициализация видимости кнопки "Наверх" при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 document.querySelector('.back-to-top').style.display = "block";
